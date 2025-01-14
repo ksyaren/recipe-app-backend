@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recipes",
+  "info": {
+    "singularName": "recipe",
+    "pluralName": "recipes",
+    "displayName": "Recipe"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "mealId": {
+      "type": "string"
+    },
+    "instructions": {
+      "type": "blocks"
+    },
+    "ingredients": {
+      "type": "json"
+    },
+    "favorite": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::favorite.favorite",
+      "inversedBy": "recipes"
+    }
+  }
+}
